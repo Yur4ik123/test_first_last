@@ -1,7 +1,7 @@
 <template>
   <div class="link__wrapper" ref="link_wrapper">
-    <router-link to="/" v-slot="{ navigate, href }" custom>
-      <a href="" class="link" ref="link">{{title}}
+    <router-link to="/test" v-slot="{ navigate, href }" custom>
+      <a :href="href" @click="navigate" class="link" ref="link">{{title}}
         <span class="link__underline " :class="position"></span>
       </a>
     </router-link>
