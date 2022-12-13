@@ -25,7 +25,6 @@ export default {
   },
   watch: {
     $route(to, from) {
-      console.log('router event')
       gsap.set('.page__transition', {right: '100%', left: -100})
       gsap.to('.page__transition', {delay: 1, duration: 1, left: '120%', rotate: 3, ease: "back.out(1.7)"})
       gsap.to('.page__transition', {duration: 2, right: -100, rotate: 3, ease: "back.out(1.7)"})
@@ -33,37 +32,6 @@ export default {
 
     }
   },
-  methods: {
-    beforeEnter(el) {
-      console.log('before enter');
-      el.style.transform = 'translateY(-100vh)';
-    },
-    enter(el) {
-      console.log('enter');
-
-      gsap.to(el, {
-        duration: 1,
-        opacity: 1,
-        translateY: '0vh',
-        ease: 'power1.inOut',
-      });
-    },
-    beforeLeave(el) {
-      console.log('before leave');
-      el.style.transform = 'translateY(0vh)';
-    },
-    leave(el, done) {
-      console.log('leave');
-      gsap.to(el, {
-        duration: 1,
-        opacity: 1,
-        translateY: '100vh',
-        ease: 'power1.inOut',
-        onComplete: done,
-      });
-    }
-  }
-
 }
 </script>
 
